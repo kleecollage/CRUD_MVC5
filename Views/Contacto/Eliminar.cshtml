@@ -1,0 +1,34 @@
+﻿@model CRUD_MVC5.Models.Contacto
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="row" style="margin-top:30px">
+    <div class="col-sm-12">
+
+        <div class="card">
+            <div class="card-header text-white bg-dark">
+                <h4 class="card-title">Eliminar contacto</h4>
+            </div>
+            <div class="card-body text-white bg-secondary">
+                <div class="alert alert-danger">
+                    <h5>¿Desea eliminar el contacto: @Html.DisplayTextFor(m => m.Nombre)  @Html.DisplayTextFor(m => m.Apellido) ?</h5>
+                </div>
+
+                <form action="@Url.Action("Eliminar","Contacto")" method="post">
+                    <input type="hidden" class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m => m.IdContacto)" />
+
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-warning" href="@Url.Action("Index","Contacto")">Volver</a>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
